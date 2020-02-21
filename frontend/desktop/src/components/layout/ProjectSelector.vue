@@ -125,7 +125,8 @@
             },
             currentProject: {
                 get () {
-                    return Number(this.project_id) || ''
+                    const num = Number(this.project_id)
+                    return isNaN(num) ? '' : num
                 },
                 set (id) {
                     this.onProjectChange(id)
